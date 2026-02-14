@@ -34,7 +34,7 @@ searchBtn.addEventListener("click", async () => {
   }
   const data = await fetchPokemon(value);
   console.log(data);
-  pokemonName.textContent = (formatText(data.name) +"#"+ data.id);
+  pokemonName.textContent = (formatText(data.name) +" #"+ data.id);
   pokemonImage.src = data.sprites.front_default;
 
   movesList.textContent = "";
@@ -112,7 +112,7 @@ randomBtn.addEventListener("click", async function () {
   const randomId = Math.floor(Math.random() * 649) + 1;
   const data = await fetchPokemon(randomId);
 
-  pokemonName.textContent = formatText(data.name);
+  pokemonName.textContent = (formatText(data.name) +" #"+ data.id);
   pokemonImage.src = data.sprites.front_default;
 
   movesList.textContent = "";
