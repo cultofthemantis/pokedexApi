@@ -2,17 +2,84 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <link rel="stylesheet" href="./src/output.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>vite-project</title>
+    <title>Pokemon Layout</title>
+    <link rel="stylesheet" href="./src/output.css" />
   </head>
-  <body>
-    <div id="app"></div>
-    <p class="text-3xl text-center">Pokedex API</p>
-    
 
-    <script type="module" src="./scripts/app.js"></script>
+  <body class="min-h-screen bg-neutral-200 flex justify-center p-8">
+
+    <main class="w-full max-w-300 space-y-6">
+    
+      <section class="flex items-center gap-4">
+        <input
+          id="searchInput"
+          type="text"
+          placeholder="Search"
+          class="flex-1 h-14 px-6 rounded-lg text-lg"
+        />
+        <button id="searchBtn" class="h-12 px-8 rounded-md bg-gray-500">Search</button>
+        <button id="randomBtn" class="h-14 px-8 rounded-lg text-lg">
+          Random
+        </button>
+      </section>
+
+
+      <section class="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-6">
+
+        <section class="p-6 rounded-xl flex flex-col gap-6">
+
+          <div class="h-[360px] rounded-xl flex items-center justify-center bg-gray-500">
+            <img id="pokemonImage" src="" alt="Pokemon" class="h-[400px] justify-self-auto" />
+          </div>
+
+
+          <div class="flex items-center justify-center gap-6">
+            <div class="evo-slot" id="evo1"></div>
+            <span class="text-2xl">→</span>
+
+            <div class="evo-slot" id="evo2"></div>
+            <span class="text-2xl">→</span>
+
+            <div class="evo-slot" id="evo3"></div>
+          </div>
+        </section>
+
+        <section class="p-6 rounded-xl flex flex-col gap-6">
+          <div class="space-y-3">
+            <h1 id="pokemonName" class="text-3xl font-semibold">Gengar</h1>
+            <p id="pokemonDetails" class="leading-relaxed">
+              
+            </p>
+          </div>
+
+          <div class="p-4 rounded-lg">
+            <h2 class="mb-2 font-medium">Moveset</h2>
+            <ul id="movesList" class="moveList grid grid-cols-2 gap-2 text-sm"></ul>
+          </div>
+
+
+          <div class="p-4 rounded-lg">
+            <h2 class="mb-2 font-medium">Abilities</h2>
+            <div id="abilitiesList" class="list-disc list-inside text-sm"></div>
+          </div>
+
+        </section>
+      </section>
+    </main>
+
+    <style>
+      .evo-slot {
+        width: 72px;
+        height: 72px;
+        border-radius: 12px;
+        background-color: rgb(103, 103, 103);
+      }
+
+    </style>
+
+    <script src="./scripts/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+
   </body>
 </html>
